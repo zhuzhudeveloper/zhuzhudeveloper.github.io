@@ -53,8 +53,11 @@
           {% endif %}
 
           <ul>
-            <li><a href="index.md">Home</a></li>
-            <li><a href="mdtutorial.md">Tutorials</a></li>
+            {% for post in site.posts %}
+              <li>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+              </li>
+            {% endfor %}
           </ul>
         </aside>
       </div>
