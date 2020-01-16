@@ -1,6 +1,6 @@
 ---
 category: tutorial
-tag: markdown
+tags: markdown
 ---
 # Markdown Tutorial   
 
