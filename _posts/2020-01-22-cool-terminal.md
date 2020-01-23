@@ -44,3 +44,7 @@ ZSH_THEME='your theme'
 ```
 ## Useful Plugins
 extract, vi-mode, colored-man-pages, perdirectory-history, history-substring-search, zsh-syntax-highlighting, zsh-autosuggestions, autojump...
+## Install Tmux
+```
+brew install tmux
+```
