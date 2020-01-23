@@ -42,3 +42,5 @@ rm -rf fonts
 open ~/.zshrc
 ZSH_THEME='your theme'
 ```
+## Useful Plugins
+extract, vi-mode, colored-man-pages, perdirectory-history, history-substring-search, zsh-syntax-highlighting, zsh-autosuggestions, autojump...
