@@ -24,8 +24,8 @@ tmux select-pane -U
 tmux select-pane -D  
 tmux select-pane -L
 tmux select-pane -R
-```
 Ctrl+b <arrow key>
+```
 ## Swap Pane
 ```
 tmux swap-pane -U
