@@ -1,3 +1,8 @@
+---
+category: tutorial
+order: 3
+tags: tmux
+---
 # Tmux Tutorial
 ## Session
 ```
