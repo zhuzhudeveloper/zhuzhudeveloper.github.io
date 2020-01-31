@@ -1,3 +1,8 @@
+---
+category: tutorial
+order: 2
+tags: build, terminal
+---
 # Cool Terminal
 ## Install Homebrew
 ```
