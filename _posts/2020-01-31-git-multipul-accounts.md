@@ -1,3 +1,8 @@
+---
+category: tutorial
+order: 5
+tags: git
+---
 ## Git Multipul Accounts
 ### Get Ready
 ```
