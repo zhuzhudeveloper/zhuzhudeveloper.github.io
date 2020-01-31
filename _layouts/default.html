@@ -65,7 +65,7 @@
             <ul>
               {% assign items = cat.items | sort: 'order' %}
               {% for item in items %}
-                <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
           {% endfor %}
             </ul>
           {% endfor %}
