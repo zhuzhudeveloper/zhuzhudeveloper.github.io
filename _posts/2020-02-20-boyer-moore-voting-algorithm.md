@@ -20,7 +20,7 @@ LeetCode 169
                     count += 1
                 else:
                     count -= 1
-        if count > 0:
+        if nums.count(candidate) > len(nums)//2:
             return candidate
         else:
             return -1
