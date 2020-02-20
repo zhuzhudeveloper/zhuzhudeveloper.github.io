@@ -37,7 +37,7 @@ We devide it into two parts:
 Based on (1,3) and (0,2)，we get the majority element 1.
 #### ⌊ n/3 ⌋
 LeetCode 229: Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.
-```
+```python
         #“在任何数组中，出现次数大于该数组长度1/3的值最多只有两个。”
         candidate1 = 0
         count1 = 0
@@ -65,3 +65,7 @@ LeetCode 229: Given an integer array of size n, find all elements that appear mo
             result.append(candidate2)
         return result
 ```
+### Complexity
+Time Complexity: O(n)
+Space Complexity: O(1)
+
