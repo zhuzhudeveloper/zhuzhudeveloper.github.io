@@ -1,7 +1,6 @@
 ---
 category: algorithm
-order: 1
-tags: Boyer-Moore
+tags: Boyer-Moore, MajorityElement
 ---
 
 # Boyer-Moore Voting Algorithm
