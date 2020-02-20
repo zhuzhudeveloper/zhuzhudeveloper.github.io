@@ -1,4 +1,9 @@
-#Python Tutorial
+---
+category: tutorial
+order: 6
+tags: python
+---
+## Python Tutorial
 ### Input and Print
 ```
 name = input('Please enter')
@@ -171,6 +176,90 @@ Key is unchangable, so a list cannot be a key.
 >>> s1 | s2
 {1, 2, 3, 4}
 ```
-
-
-
+### Collection.Counter
+#### Definition
+```
+>>> c = Counter()  
+>>> c = Counter('gallahad') 
+>>> c = Counter({'a': 4, 'b': 2})
+>>> c = Counter(a=4, b=2) 
+```
+#### Update and Substract
+```
+>>> c = Counter('which')
+>>> c.update('witch')  # 使用另一个iterable对象更新
+>>> c['h']
+3
+>>> d = Counter('watch')
+>>> c.update(d)  # 使用另一个Counter对象更新
+>>> c['h']
+4
+>>> c = Counter('which')
+>>> c.subtract('witch')  # 使用另一个iterable对象更新
+>>> c['h']
+1
+>>> d = Counter('watch')
+>>> c.subtract(d)  # 使用另一个Counter对象更新
+>>> c['a']
+-1
+```
+#### del
+```
+>>> c = Counter("abcdcba")
+>>> c
+Counter({'a': 2, 'c': 2, 'b': 2, 'd': 1})
+>>> c["b"] = 0
+>>> c
+Counter({'a': 2, 'c': 2, 'd': 1, 'b': 0})
+>>> del c["a"]
+>>> c
+Counter({'c': 2, 'b': 2, 'd': 1})
+```
+#### elements()
+```
+>>> c = Counter(a=4, b=2, c=0, d=-2)
+>>> list(c.elements())
+['a', 'a', 'a', 'a', 'b', 'b'] #no order
+```
+#### most_common([])
+```
+>>> c = Counter('abracadabra')
+>>> c.most_common()
+[('a', 5), ('r', 2), ('b', 2), ('c', 1), ('d', 1)]
+>>> c.most_common(3)
+[('a', 5), ('r', 2), ('b', 2)]
+```
+#### copy
+```
+>>> c = Counter("abcdcba")
+>>> c
+Counter({'a': 2, 'c': 2, 'b': 2, 'd': 1})
+>>> d = c.copy()
+>>> d
+Counter({'a': 2, 'c': 2, 'b': 2, 'd': 1})
+```
+#### Calculations
+```
+>>> c = Counter(a=3, b=1)
+>>> d = Counter(a=1, b=2)
+>>> c + d  # c[x] + d[x]
+Counter({'a': 4, 'b': 3})
+>>> c - d  # subtract
+Counter({'a': 2})
+>>> c & d  # intersection:  min(c[x], d[x])
+Counter({'a': 1, 'b': 1})
+>>> c | d  # union:  max(c[x], d[x])
+Counter({'a': 3, 'b': 2})
+```
+#### Others
+```
+sum(c.values())  # 所有计数的总数
+c.clear()  # 重置Counter对象，注意不是删除
+list(c)  # 将c中的键转为列表
+set(c)  # 将c中的键转为set
+dict(c)  # 将c中的键值对转为字典
+c.items()  # 转为(elem, cnt)格式的列表
+Counter(dict(list_of_pairs))  # 从(elem, cnt)格式的列表转换为Counter类对象
+c.most_common()[:-n:-1]  # 取出计数最少的n-1个元素
+c += Counter()  # 移除0和负值
+```
