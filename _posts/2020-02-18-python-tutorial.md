@@ -3,15 +3,15 @@ category: tutorial
 order: 6
 tags: python
 ---
-## Python Tutorial
-### Input and Print
+# Python Tutorial
+## Input and Print
 ```
 name = input('Please enter')
 print("10*10=", 10*10, 'Your name is', name)
 ```
 
-### Data Types
-#### String
+## Data Types
+### String
 Use r'' to avoid Escape Letter and show raw string
 ```
 >>> print('\\\t\\')
@@ -21,14 +21,14 @@ Use r'' to avoid Escape Letter and show raw string
 >>> len('ABC')
 3
 ```
-#### True, False, and, or, not, None
+### True, False, and, or, not, None
 
-### Division
+## Division
 / float division            
 // floor division              
 % mod      
 
-### Unicode
+## Unicode
 ```
 >>> ord('A')
 65
@@ -36,7 +36,7 @@ Use r'' to avoid Escape Letter and show raw string
 'B'
 ```      
 
-### Formative Sentence
+## Formative Sentence
 Use % (Escape letter %%)
 ```
 >>> 'Hello, %s' % 'world'
@@ -49,7 +49,7 @@ Use % (Escape letter %%)
 %s: String         
 %x: Hex Number
 
-### List
+## List
 ```
 >>> classmates = ['Michael', 'Bob', 'Tracy']
 >>> classmates
@@ -80,7 +80,7 @@ Use % (Escape letter %%)
 >>> L = ['Apple', 123, True]
 s = ['python', 'java', ['asp', 'php'], 'scheme']
 ```
-### Tuple
+## Tuple
 Tuple can't be changed.
 ```
 >>> t = (1, 2)
@@ -101,7 +101,7 @@ Following case, tuple is not changed, but list changed.
 >>> t
 ('a', 'b', ['X', 'Y'])
 ```
-### Condition
+## Condition
 ```
 age = 3
 if age >= 18:
@@ -112,7 +112,7 @@ elif age >= 6:
 else:
     print('kid')
 ```
-### Loop
+## Loop
 ```
 names = ['Michael', 'Bob', 'Tracy']
 for name in names:
@@ -134,7 +134,7 @@ while n <= 100:
 print('END')
 ```
 continue also can be used.    
-### Dictionary
+## Dictionary
 ```
 >>> d = {'Michael': 95, 'Bob': 75, 'Tracy': 85}
 >>> d['Michael']
@@ -155,7 +155,7 @@ False
 {'Michael': 95, 'Tracy': 85}
 ```
 Key is unchangable, so a list cannot be a key.      
-### Set
+## Set
 ```
 >>> s = set([1, 1, 2, 2, 3, 3])
 >>> s
@@ -176,15 +176,15 @@ Key is unchangable, so a list cannot be a key.
 >>> s1 | s2
 {1, 2, 3, 4}
 ```
-### Collection.Counter
-#### Definition
+## Collection.Counter
+### Definition
 ```
 >>> c = Counter()  
 >>> c = Counter('gallahad') 
 >>> c = Counter({'a': 4, 'b': 2})
 >>> c = Counter(a=4, b=2) 
 ```
-#### Update and Substract
+### Update and Substract
 ```
 >>> c = Counter('which')
 >>> c.update('witch')  # 使用另一个iterable对象更新
@@ -203,7 +203,7 @@ Key is unchangable, so a list cannot be a key.
 >>> c['a']
 -1
 ```
-#### del
+### del
 ```
 >>> c = Counter("abcdcba")
 >>> c
@@ -215,13 +215,13 @@ Counter({'a': 2, 'c': 2, 'd': 1, 'b': 0})
 >>> c
 Counter({'c': 2, 'b': 2, 'd': 1})
 ```
-#### elements()
+### elements()
 ```
 >>> c = Counter(a=4, b=2, c=0, d=-2)
 >>> list(c.elements())
 ['a', 'a', 'a', 'a', 'b', 'b'] #no order
 ```
-#### most_common([])
+### most_common([])
 ```
 >>> c = Counter('abracadabra')
 >>> c.most_common()
@@ -229,7 +229,7 @@ Counter({'c': 2, 'b': 2, 'd': 1})
 >>> c.most_common(3)
 [('a', 5), ('r', 2), ('b', 2)]
 ```
-#### copy
+### copy
 ```
 >>> c = Counter("abcdcba")
 >>> c
@@ -238,7 +238,7 @@ Counter({'a': 2, 'c': 2, 'b': 2, 'd': 1})
 >>> d
 Counter({'a': 2, 'c': 2, 'b': 2, 'd': 1})
 ```
-#### Calculations
+### Calculations
 ```
 >>> c = Counter(a=3, b=1)
 >>> d = Counter(a=1, b=2)
@@ -251,7 +251,7 @@ Counter({'a': 1, 'b': 1})
 >>> c | d  # union:  max(c[x], d[x])
 Counter({'a': 3, 'b': 2})
 ```
-#### Others
+### Others
 ```
 sum(c.values())  # 所有计数的总数
 c.clear()  # 重置Counter对象，注意不是删除
