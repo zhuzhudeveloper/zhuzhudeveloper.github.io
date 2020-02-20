@@ -1,8 +1,9 @@
 ---
 category: algorithm
 order: 1
-tags: Boyer-Moore, Majority Element
+tags: Boyer-Moore
 ---
+
 # Boyer-Moore Voting Algorithm
 ### Goal 
 Find a candidate that appears more than ⌊ n/2 ⌋ times. Find one, not find all.
