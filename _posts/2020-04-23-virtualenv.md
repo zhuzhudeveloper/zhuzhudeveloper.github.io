@@ -1,7 +1,6 @@
 ---
 category: tutorial
-order: 3
-tags: tmux
+tags: vitualenv
 ---
 # Vitualenv
 ```
