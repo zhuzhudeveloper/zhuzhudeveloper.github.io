@@ -1,3 +1,7 @@
+---
+category: tutorial
+tags: git, environment
+---
 # Requirements.txt in GitHub or GitLab
 ## Install the whole package
 ```
