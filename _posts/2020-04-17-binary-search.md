@@ -124,7 +124,7 @@ if(nums[mid]>nums[mid+1] and nums[mid]>nums[mid-1]): return mid ##pay attention 
 if(nums[mid]<nums[mid+1]): go right
 else: go left, need test before
 
-def binarySearch(self, nums, left, right):
+    def binarySearch(self, nums, left, right):
         while(left<right):
             mid = left + (right-left) // 2
             if(mid-1>0 and nums[mid]>nums[mid-1] and mid+1<len(nums) and nums[mid]>nums[mid+1]):
