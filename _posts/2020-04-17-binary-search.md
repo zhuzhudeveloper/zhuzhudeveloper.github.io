@@ -113,4 +113,34 @@ The array may contain duplicates.
                 right = right -1
         return nums[left]
 ```
+### LeetCode 162: Find Peak Element   
+A peak element is an element that is greater than its neighbors.                
+Given an input array nums, where nums[i] ≠ nums[i+1], find a peak element and return its index.               
+The array may contain multiple peaks, in that case return the index to any one of the peaks is fine.              
+You may imagine that nums[-1] = nums[n] = -∞.             
+```
+Analysis:
+if(nums[mid]>nums[mid+1] and nums[mid]>nums[mid-1]): return mid ##pay attention to boundary
+if(nums[mid]<nums[mid+1]): go right
+else: go left, need test before
+
+def binarySearch(self, nums, left, right):
+        while(left<right):
+            mid = left + (right-left) // 2
+            if(mid-1>0 and nums[mid]>nums[mid-1] and mid+1<len(nums) and nums[mid]>nums[mid+1]):
+                return mid
+            if(nums[mid]<nums[mid+1]):
+                left = mid+1
+                self.binarySearch(nums,left, right)
+            elif(nums[mid]>nums[mid+1]):
+                right = mid
+                self.binarySearch(nums,left, right)
+        return left
+    
+    def findPeakElement(self, nums: List[int]) -> int:
+        n = len(nums)
+        left = 0 
+        right = n-1
+        return self.binarySearch(nums, left, right)
+```
 
