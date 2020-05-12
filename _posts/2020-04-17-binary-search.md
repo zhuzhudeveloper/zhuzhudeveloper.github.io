@@ -143,4 +143,40 @@ else: go left, need test before
         right = n-1
         return self.binarySearch(nums, left, right)
 ```
-
+### LeetCode 300: Longest Increasing Subsequence
+Input: [10,9,2,5,3,7,101,18]                  
+Output: 4                    
+Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4.          
+```
+def lengthOfLIS(self, nums: List[int]) -> int:
+        #scan items before i: find the item which is smaller but with largest count
+        # if(len(nums)==0): return 0
+        # count = []
+        # for i in range(len(nums)):
+        #     count.append(1)
+        #     for j in range(i):
+        #         if(nums[j]<nums[i]):
+        #             count[i] = max(count[i], count[j]+1)
+        # return max(count)
+        
+        dp = []
+        for x in nums:
+            if x not in dp:
+                idex = self.binarySearch(dp, 0, len(dp), x)
+                if(idex<len(dp)):
+                    dp[idex]=x
+                else:
+                    dp.append(x)
+        return len(dp)
+        
+    def binarySearch(self, dp, left, right, item):
+        while(left<right):   
+            mid = left + (right-left)//2
+            if(dp[mid]==item):
+                return mid
+            elif(dp[mid]>item):
+                right = mid
+            else:
+                left = mid+1
+        return left
+```
