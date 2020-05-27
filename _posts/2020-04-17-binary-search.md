@@ -26,6 +26,22 @@ tags: Binary Search
                 right = mid
         return left
 ```
+### Python bisect
+##### bisect.bisect_left(a, x, lo=0, hi=len(a))            
+Locate the insertion point for x in a to maintain sorted order. The parameters lo and hi may be used to specify a subset of the list which should be considered; by default the entire list is used. If x is already present in a, the insertion point will be before (to the left of) any existing entries. The return value is suitable for use as the first parameter to list.insert() assuming that a is already sorted.                  
+                
+The returned insertion point i partitions the array a into two halves so that all(val < x for val in a[lo:i]) for the left side and all(val >= x for val in a[i:hi]) for the right side.                    
+
+##### bisect.bisect_right(a, x, lo=0, hi=len(a)) && bisect.bisect(a, x, lo=0, hi=len(a))
+Similar to bisect_left(), but returns an insertion point which comes after (to the right of) any existing entries of x in a.   
+         
+The returned insertion point i partitions the array a into two halves so that all(val <= x for val in a[lo:i]) for the left side and all(val > x for val in a[i:hi]) for the right side.            
+
+##### bisect.insort_left(a, x, lo=0, hi=len(a))
+Insert x in a in sorted order. This is equivalent to a.insert(bisect.bisect_left(a, x, lo, hi), x) assuming that a is already sorted. Keep in mind that the O(log n) search is dominated by the slow O(n) insertion step.               
+
+##### bisect.insort_right(a, x, lo=0, hi=len(a)) && bisect.insort(a, x, lo=0, hi=len(a))
+Similar to insort_left(), but inserting x in a after any existing entries of x.
 ### LeetCode 34: Find First and Last Position of Element in Sorted Array
 Given an array of integers nums sorted in ascending order, find the starting and ending position of a given target value.       
 Your algorithm's runtime complexity must be in the order of O(log n).       
