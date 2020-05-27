@@ -195,6 +195,37 @@ def lengthOfLIS(self, nums: List[int]) -> int:
                 left = mid+1
         return left
 ```
+### LeetCode 354: Russian Doll Envelopes
+You have a number of envelopes with widths and heights given as a pair of integers (w, h). One envelope can fit into another if and only if both the width and height of one envelope is greater than the width and height of the other envelope.
+
+What is the maximum number of envelopes can you Russian doll? (put one inside other)
+
+Note:
+Rotation is not allowed.
+
+Example:
+
+Input: [[5,4],[6,4],[6,7],[2,3]]
+Output: 3 
+Explanation: The maximum number of envelopes you can Russian doll is 3 ([2,3] => [5,4] => [6,7]).
+```
+# First Element: Increasing
+# If same first elements: Second Element goes decreasing
+# Longest increasing sequence
+import bisect
+    def maxEnvelopes(self, envelopes: List[List[int]]) -> int:
+        def lis(nums):
+            dp = []
+            for num in nums:
+                idx = bisect_left(dp, num)
+                if(idx<len(dp)):
+                    dp[idx] = num
+                else:
+                    dp.append(num)
+            return len(dp)
+        envelopes.sort(key = lambda x: (x[0], -x[1]))
+        return lis([i[1] for i in envelopes])
+```
 ### LeetCode 315: Count of Smaller Numbers After Self
 You are given an integer array nums and you have to return a new counts array. The counts array has the property where counts[i] is the number of smaller elements to the right of nums[i].           
 Example:            
