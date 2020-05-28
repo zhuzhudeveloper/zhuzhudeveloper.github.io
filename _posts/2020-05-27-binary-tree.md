@@ -108,3 +108,39 @@ Recursive
             self.postorderHelper(root.right, res)
             res.append(root.val)
 ```
+## BFS
+```
+    def levelOrder(self, root: TreeNode) -> List[List[int]]:
+        res = []
+        level = [root]
+        while root and level:
+            currentlevelres = []
+            nextlevel = []
+            for node in level:
+                currentlevelres.append(node.val)
+                if node.left:
+                    nextlevel.append(node.left)
+                if node.right:
+                    nextlevel.append(node.right)
+            res.append(currentlevelres)
+            level = nextlevel
+        return res
+```
+Recursive
+```
+    def levelOrder(self, root: TreeNode) -> List[List[int]]:
+        res = []
+        if not root:
+            return res
+        self.levelOrderHelper(root, 0, res)
+        return res
+    
+    def levelOrderHelper(self, node, levelnum, res):
+        if len(res) == levelnum:
+            res.append([])
+        res[levelnum].append(node.val)
+        if node.left:
+            self.levelOrderHelper(node.left, levelnum+1, res)
+        if node.right:
+            self.levelOrderHelper(node.right, levelnum+1, res)
+```
