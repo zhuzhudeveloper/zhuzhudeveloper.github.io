@@ -179,4 +179,35 @@ Time Complexity: O(nlogn); Space Complexity: O(n)
         return self.isBalancedHelper(root)[0]
 ```
 Time Complexity: O(n); Space Compelexity: O(n)
+## LeetCode 124: Binary Tree Maximum Path Sum 
+Given a non-empty binary tree, find the maximum path sum.
+
+For this problem, a path is defined as any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The path must contain at least one node and does not need to go through the root.      
+
+Example:     
+Input: [-10,9,20,null,null,15,7]
+
+   -10
+   / \
+  9  20
+    /  \
+   15   7
+
+Output: 42
+```
+    def maxPathSum(self, root: TreeNode) -> int:
+        
+        def maxGain(node):
+            nonlocal max_sum
+            if not node:
+                return 0
+            left_gain = max(maxGain(node.left), 0)
+            right_gain = max(maxGain(node.right), 0)
+            newpathgain = node.val + left_gain + right_gain
+            max_sum = max(max_sum, newpathgain)
+            return node.val + max(left_gain, right_gain)
+        
+        max_sum = float('-inf')
+        maxGain(root)
+        return max_sum
 ```
