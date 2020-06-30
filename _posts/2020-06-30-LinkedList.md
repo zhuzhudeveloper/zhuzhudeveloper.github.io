@@ -1,6 +1,6 @@
 ---
 category: data structure
-tags: LinkedList
+tags: Linked List
 ---
 # LinkedList
 ## Defination
@@ -34,4 +34,27 @@ Output: 5->4->3->2->1->NULL
             current = temp
             # cur.next, prev, cur = prev, cur, cur.next
         return pre
+```
+## Special Example
+### LeetCode141: Linked List Cycle
+Example 1:            
+Input: head = [3,2,0,-4], pos = 1               
+Output: true                      
+Explanation: There is a cycle in the linked list, where tail connects to the second node.                
+```
+ def hasCycle(self, head):
+    try:
+        slow = head
+        fast = head.next
+        while slow is not fast:
+            slow = slow.next
+            fast = fast.next.next
+        return True
+    except:
+        return False
+#
+Use two pointers, walker and runner.
+walker moves step by step. runner moves two steps at time.
+if the Linked List has a cycle walker and runner will meet at some point.
+#
 ```
