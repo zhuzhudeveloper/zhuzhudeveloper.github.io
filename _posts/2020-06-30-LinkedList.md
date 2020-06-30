@@ -28,8 +28,10 @@ Output: 5->4->3->2->1->NULL
         current = head
         pre = None
         while(current):
+            temp = current.next
             current.next = pre
             pre = current
-            current = current.next
+            current = temp
+            # cur.next, prev, cur = prev, cur, cur.next
         return pre
 ```
